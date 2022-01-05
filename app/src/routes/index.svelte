@@ -1,9 +1,12 @@
 <script lang="ts">
+  import Layout from '@/components/layout.svelte';
   import { Button } from 'sveltestrap';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
-<Button color="primary" outline>sveltestrap</Button>
+<Layout>
+  <h1>Welcome to SvelteKit</h1>
+  <p>
+    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
+  </p>
+  <Button color="primary" outline>sveltestrap</Button>
+</Layout>
