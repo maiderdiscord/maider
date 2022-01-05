@@ -174,4 +174,6 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,go,node
 
+golib.so
 golib.dll
+golib.h

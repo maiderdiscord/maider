@@ -2,6 +2,7 @@ const windowStateManager = require('electron-window-state');
 const contextMenu = require('electron-context-menu');
 const { app, BrowserWindow } = require('electron');
 const serve = require('electron-serve');
+const path = require('path');
 
 try {
   require('electron-reloader')(module);
@@ -28,14 +29,15 @@ function createWindow() {
       x: 17,
       y: 32,
     },
-    minHeight: 450,
-    minWidth: 500,
+    minHeight: 1000,
+    minWidth: 1500,
     webPreferences: {
       enableRemoteModule: true,
       contextIsolation: true,
       nodeIntegration: true,
       spellcheck: false,
       devTools: dev,
+      preload: path.join(__dirname, 'preload.cjs'),
     },
     x: windowState.x,
     y: windowState.y,
