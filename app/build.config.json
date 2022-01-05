@@ -1,0 +1,14 @@
+{
+    "appId": "net.maider.maider",
+    "productName": "Maider",
+    "directories": {
+        "output": "dist"
+    },
+    "files": [
+        "src/electron.cjs",
+        {
+            "from": "build",
+            "to": ""
+        }
+    ]
+}
