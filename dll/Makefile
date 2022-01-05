@@ -1,0 +1,3 @@
+.PHONY: build
+build:
+	go build -buildmode=c-shared -o ../app/static/golib.dll main.go
