@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"sync"
+	"time"
 
 	"github.com/maiderdiscord/proxychecker"
 )
@@ -32,13 +33,13 @@ type CheckProxyOutput struct {
 }
 
 //export CheckProxy
-func CheckProxy(data string) string {
+func CheckProxy(data *C.char) *C.char {
 	in := new(CheckProxyInput)
 	out := new(CheckProxyOutput)
 
-	if err := json.Unmarshal([]byte(data), in); err != nil {
+	if err := json.Unmarshal([]byte(C.GoString(data)), in); err != nil {
 		o, _ := json.Marshal(out)
-		return string(o)
+		return C.CString(string(o))
 	}
 
 	proxyType := proxychecker.TypeHTTP
@@ -52,7 +53,7 @@ func CheckProxy(data string) string {
 	wg := new(sync.WaitGroup)
 	m := sync.Map{}
 
-	for _, proxy := range in.Proxies {
+	for i, proxy := range in.Proxies {
 		wg.Add(1)
 		go func(proxy string) {
 			defer wg.Done()
@@ -60,6 +61,10 @@ func CheckProxy(data string) string {
 			alive, _ := proxychecker.Check(ctx, proxy, proxyType)
 			m.Store(proxy, alive)
 		}(proxy)
+
+		if i%20 == 0 {
+			time.Sleep(time.Second * 5)
+		}
 	}
 
 	wg.Wait()
@@ -75,5 +80,5 @@ func CheckProxy(data string) string {
 
 	out.Success = true
 	o, _ := json.Marshal(out)
-	return string(o)
+	return C.CString(string(o))
 }

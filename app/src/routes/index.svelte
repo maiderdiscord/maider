@@ -1,12 +1,14 @@
 <script lang="ts">
   import Layout from '@/components/layout.svelte';
-  import { Button } from 'sveltestrap';
+  import Proxy from '@/components/proxy.svelte';
+  import { Col, Row } from 'sveltestrap';
 </script>
 
 <Layout>
-  <h1>Welcome to SvelteKit</h1>
-  <p>
-    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-  </p>
-  <Button color="primary" outline>sveltestrap</Button>
+  <Row cols="3">
+    <Col>
+      <h2 class="text-center">Proxy</h2>
+      <Proxy />
+    </Col>
+  </Row>
 </Layout>
