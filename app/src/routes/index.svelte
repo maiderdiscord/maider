@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from 'sveltestrap';
+	import { Button } from 'sveltestrap';
 </script>
 
 <h1>Welcome to SvelteKit</h1>
