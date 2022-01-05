@@ -1,5 +1,6 @@
 package main
 
+import "C"
 import (
 	"context"
 	"encoding/json"
@@ -30,6 +31,7 @@ type CheckProxyOutput struct {
 	Result  []CheckProxyResult `json:"result"`
 }
 
+//export CheckProxy
 func CheckProxy(data string) string {
 	in := new(CheckProxyInput)
 	out := new(CheckProxyOutput)
