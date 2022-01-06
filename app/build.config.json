@@ -2,7 +2,8 @@
   "appId": "net.maider.maider",
   "productName": "Maider",
   "directories": {
-    "output": "dist"
+    "output": "dist",
+    "buildResources": "resources"
   },
   "files": [
     "**/*.cjs",
@@ -19,6 +20,6 @@
   ],
   "win": {
     "target": "nsis",
-    "icon": "../images/icon.ico"
+    "icon": "resources/icon.ico"
   }
 }
