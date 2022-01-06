@@ -8,4 +8,7 @@ contextBridge.exposeInMainWorld('core', {
   checkProxy: (proxyType, proxies) => {
     return goLib.checkProxy(proxyType, proxies);
   },
+  checkTokens: (tokens, proxies, proxyType) => {
+    return goLib.checkTokens(tokens, proxies, proxyType);
+  },
 });
