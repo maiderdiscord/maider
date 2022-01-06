@@ -1,5 +1,5 @@
 EXTENSION=so
-ifeq ($(OS), WINDOWS_NT)
+ifeq ($(OS) ,Windows_NT)
 	EXTENSION=dll
 endif
 
