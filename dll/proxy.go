@@ -2,7 +2,6 @@ package main
 
 import "C"
 import (
-	"context"
 	"encoding/json"
 	"sync"
 	"time"
@@ -49,7 +48,6 @@ func CheckProxy(data *C.char) *C.char {
 		proxyType = proxychecker.TypeSOCKS5
 	}
 
-	ctx := context.Background()
 	wg := new(sync.WaitGroup)
 	m := sync.Map{}
 
@@ -58,11 +56,11 @@ func CheckProxy(data *C.char) *C.char {
 		go func(proxy string) {
 			defer wg.Done()
 
-			alive, _ := proxychecker.Check(ctx, proxy, proxyType)
+			alive, _ := proxychecker.Check(proxy, proxyType)
 			m.Store(proxy, alive)
 		}(proxy)
 
-		if i%20 == 0 {
+		if (i+1)%50 == 0 {
 			time.Sleep(time.Second * 5)
 		}
 	}

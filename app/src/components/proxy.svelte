@@ -10,6 +10,8 @@
   let loadedProxiesCount = 0;
   let loading = false;
   let loaded = false;
+  let eta = 0;
+  let etaMinutes = 0;
 
   const unsubscribe = proxies.subscribe((v) => {
     proxiesCount = v.length;
@@ -30,6 +32,8 @@
       .split('\n')
       .map((proxy) => proxy.replace('\r', ''));
     loadedProxiesCount = loadedProxies.length;
+    eta = (loadedProxiesCount / 50) * 5 + 10;
+    etaMinutes = Math.floor(eta / 60);
     const res = await window.core.checkProxy(proxyType, loadedProxies);
     proxies.update(() => res.result.filter((x) => x.alive).map((x) => x.proxy));
     loading = false;
@@ -56,6 +60,12 @@
       on:click={onClick}
       bind:disabled={loading}>Load Proxy</Button
     >
+
+    {#if loading}
+      <p>
+        ETA: {etaMinutes}m{Math.floor(eta - etaMinutes * 60)}s
+      </p>
+    {/if}
   </div>
 
   {#if !loading && loaded}

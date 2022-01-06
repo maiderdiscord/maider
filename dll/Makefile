@@ -1,8 +1,6 @@
-EXTENSION=so
-ifeq ($(OS), Windows_NT)
-	EXTENSION=dll
-endif
-
 .PHONY: build
 build:
-	go build -buildmode=c-shared -o ../app/golib.$(EXTENSION) ./...
+	CGO_ENABLED=1 GOOS=windows GOARCH=amd64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ go build -buildmode=c-shared -o ../app/golib.dll ./...
+
+build-local-unix:
+	go build -buildmode=c-shared -o ../app/golib.so ./...
