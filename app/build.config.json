@@ -5,10 +5,10 @@
     "output": "dist"
   },
   "files": [
-    "src/electron.cjs",
+    "**/*.cjs",
     {
       "from": "build",
       "to": ""
-    }
-  ]
+    },
+  ],
 }
