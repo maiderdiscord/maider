@@ -2,7 +2,7 @@
   "appId": "net.maider.maider",
   "productName": "Maider",
   "directories": {
-    "output": "dist",
+    "output": "dist"
   },
   "files": [
     "**/*.cjs",
