@@ -8,6 +8,7 @@
 - Node.js
 - GCC
 - GNU Make
+- https://github.com/nodejs/node-gyp#installation に書かれてる必要そうなもの
 
 ### 実行
 
