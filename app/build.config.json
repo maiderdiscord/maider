@@ -12,6 +12,9 @@
     }
   ],
   "extraResources": [
-    "golib.dll"
+    {
+      "from": "golib.dll",
+      "to": ".."
+    }
   ]
 }
