@@ -1,6 +1,8 @@
+EXTENSION=so
+ifeq ($(OS), WINDOWS_NT)
+	EXTENSION=dll
+endif
+
 .PHONY: build
 build:
-	CGO_ENABLED=1 GOOS=windows GOARCH=386 go build -buildmode=c-shared -o ../app/golib.dll ./...
-
-build-local-unix:
-	go build -buildmode=c-shared -o ../app/golib.so ./...
+	go build -buildmode=c-shared -o ../app/golib.$(EXTENSION) ./...
