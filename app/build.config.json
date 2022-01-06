@@ -16,5 +16,9 @@
       "from": "golib.dll",
       "to": ".."
     }
-  ]
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "../images/icon.ico"
+  }
 }

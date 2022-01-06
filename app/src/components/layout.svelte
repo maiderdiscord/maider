@@ -1,8 +1,9 @@
 <script lang="ts">
   import Header from '@/components/header.svelte';
+  import { Container } from 'sveltestrap';
 </script>
 
 <Header />
-<div class="container">
+<Container>
   <slot />
-</div>
+</Container>

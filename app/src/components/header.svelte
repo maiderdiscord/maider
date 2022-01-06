@@ -18,9 +18,13 @@
   onDestroy(unsubscribe);
 </script>
 
-<Navbar color="light" light expand="md">
+<Navbar color="dark" dark expand="md">
   <NavbarBrand>
-    <Image src="https://avatars.githubusercontent.com/u/97165057" width="64" />
+    <Image
+      class="rounded-circle"
+      src="https://avatars.githubusercontent.com/u/97165057"
+      width="64"
+    />
     Maider
   </NavbarBrand>
   <Collapse isOpen={true} navbar expand="md">

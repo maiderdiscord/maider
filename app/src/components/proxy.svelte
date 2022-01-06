@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { proxies } from '@/store';
+  import { proxies, proxyType } from '@/store';
   import { onDestroy } from 'svelte';
 
   import { Alert, Button, Form, FormGroup, Input, Label } from 'sveltestrap';
 
   let files: FileList;
-  let proxyType = 0;
+  let chosenProxyType = 0;
   let proxiesCount = 0;
   let loadedProxiesCount = 0;
   let loading = false;
@@ -34,7 +34,8 @@
     loadedProxiesCount = loadedProxies.length;
     eta = (loadedProxiesCount / 50) * 5 + 10;
     etaMinutes = Math.floor(eta / 60);
-    const res = await window.core.checkProxy(proxyType, loadedProxies);
+    const res = await window.core.checkProxy(chosenProxyType, loadedProxies);
+    proxyType.update(() => chosenProxyType);
     proxies.update(() => res.result.filter((x) => x.alive).map((x) => x.proxy));
     loading = false;
     loaded = true;
@@ -49,8 +50,8 @@
 
   <FormGroup>
     <Label>Proxy Type</Label>
-    <Input type="radio" bind:group={proxyType} value={0} label="HTTP" />
-    <Input type="radio" bind:group={proxyType} value={1} label="SOCKS5" />
+    <Input type="radio" bind:group={chosenProxyType} value={0} label="HTTP" />
+    <Input type="radio" bind:group={chosenProxyType} value={1} label="SOCKS5" />
   </FormGroup>
 
   <div class="text-center">
