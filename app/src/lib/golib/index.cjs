@@ -1,10 +1,10 @@
-const { rejects } = require('assert');
 const ffi = require('ffi-napi');
-const { resolve } = require('path/posix');
+const app = require('electron');
 
 module.exports = class GoLib {
   constructor() {
-    this.lib = ffi.Library('./golib', {
+    const libPath = app.isPackaged ? './resources/golib' : './golib';
+    this.lib = ffi.Library(libPath, {
       CheckProxy: ['string', ['string']],
     });
   }

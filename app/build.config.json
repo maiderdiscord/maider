@@ -10,5 +10,8 @@
       "from": "build",
       "to": ""
     }
+  ],
+  "extraResources": [
+    "golib.dll"
   ]
 }
