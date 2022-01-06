@@ -3,7 +3,6 @@
   "productName": "Maider",
   "directories": {
     "output": "dist",
-    "buildResources": "resources"
   },
   "files": [
     "**/*.cjs",
@@ -20,6 +19,6 @@
   ],
   "win": {
     "target": "nsis",
-    "icon": "resources/icon.ico"
+    "icon": "../images/icon.png"
   }
 }
