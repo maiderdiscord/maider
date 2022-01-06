@@ -23,7 +23,6 @@ function createWindow() {
 
   const mainWindow = new BrowserWindow({
     backgroundColor: 'whitesmoke',
-    titleBarStyle: 'hidden',
     autoHideMenuBar: true,
     trafficLightPosition: {
       x: 17,
@@ -46,6 +45,8 @@ function createWindow() {
   });
 
   windowState.manage(mainWindow);
+
+  mainWindow.setTitle('Maider');
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
