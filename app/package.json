@@ -18,6 +18,7 @@
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.24",
     "@sveltejs/kit": "next",
+    "@types/axios": "^0.14.0",
     "@types/ffi-napi": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -42,10 +43,12 @@
   },
   "type": "module",
   "dependencies": {
+    "axios": "^0.24.0",
     "electron-context-menu": "^3.1.1",
     "electron-serve": "^1.1.0",
     "electron-window-state": "^5.0.3",
     "ffi-napi": "^4.0.3",
+    "node-machine-id": "^1.1.12",
     "sveltestrap": "^5.7.0"
   }
 }
