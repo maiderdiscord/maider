@@ -10,6 +10,7 @@ type CheckTokensResult = {
 
 interface Window {
   core: {
+    getHWID(): Promise<string>;
     checkProxy(proxyType: number, proxies: string[]): Promise<CheckProxyResult>;
     checkTokens(
       tokens: string[],
