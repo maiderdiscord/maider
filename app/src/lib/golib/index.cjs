@@ -6,6 +6,7 @@ module.exports = class GoLib {
     this.lib = ffi.Library('./golib', {
       CheckProxy: ['string', ['string']],
       CheckTokens: ['string', ['string']],
+      Joiner: ['void', ['string']],
     });
   }
 
@@ -40,6 +41,25 @@ module.exports = class GoLib {
           return;
         }
         resolve(JSON.parse(res));
+      });
+    });
+  }
+
+  joiner(tokens, proxies, proxyType, code) {
+    const input = {
+      tokens,
+      proxies,
+      proxyType,
+      code,
+    };
+
+    return new Promise((resolve, reject) => {
+      this.lib.Joiner.async(JSON.stringify(input), (err, _) => {
+        if (err != null) {
+          reject(err);
+          return;
+        }
+        resolve(null);
       });
     });
   }

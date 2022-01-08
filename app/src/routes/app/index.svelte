@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Joiner from '@/components/joiner.svelte';
   import Layout from '@/components/layout.svelte';
   import Proxy from '@/components/proxy.svelte';
   import Token from '@/components/token.svelte';
@@ -14,6 +15,10 @@
     <Col>
       <h2 class="text-center">Token</h2>
       <Token />
+    </Col>
+    <Col>
+      <h2 class="text-center">Joiner</h2>
+      <Joiner />
     </Col>
   </Row>
 </Layout>
