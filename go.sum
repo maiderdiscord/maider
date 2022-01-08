@@ -6,6 +6,8 @@ github.com/maiderdiscord/discord v0.0.0-20220106121426-dfc87b25fef0 h1:gSTFPmzex
 github.com/maiderdiscord/discord v0.0.0-20220106121426-dfc87b25fef0/go.mod h1:uwYRz+wZ0yJnGSJkJ4wWxGymsYEEQQpo1CQUuYFraus=
 github.com/maiderdiscord/discord v0.0.0-20220108004838-ad6e4c56ca95 h1:+WKwfsYcN7fVn3ZxZEXTuRj8prCjFwx8jMxZYVkchDE=
 github.com/maiderdiscord/discord v0.0.0-20220108004838-ad6e4c56ca95/go.mod h1:uwYRz+wZ0yJnGSJkJ4wWxGymsYEEQQpo1CQUuYFraus=
+github.com/maiderdiscord/discord v0.0.0-20220108035014-c99348f67399 h1:Ly/N/mC4Yq5lfsH53GlThZY6O2CSzBUbzs7sz1cQM+E=
+github.com/maiderdiscord/discord v0.0.0-20220108035014-c99348f67399/go.mod h1:uwYRz+wZ0yJnGSJkJ4wWxGymsYEEQQpo1CQUuYFraus=
 github.com/maiderdiscord/proxychecker v0.0.0-20220106023839-24f2063ffd1e h1:fwJSOVsa51u4SFm4E+MFfHXxWUMA17E3pW8zAB/eAKQ=
 github.com/maiderdiscord/proxychecker v0.0.0-20220106023839-24f2063ffd1e/go.mod h1:FrbkhbCjp0mzy5tGy6eQlLw0KTuh/QPuzBEZwXWSrfs=
 github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2 h1:JhzVVoYvbOACxoUmOs6V/G4D5nPVUW73rKvXxP4XUJc=
