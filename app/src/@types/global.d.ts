@@ -17,5 +17,11 @@ interface Window {
       proxies: string[],
       proxyType: number,
     ): Promise<CheckTokensResult>;
+    joiner(
+      tokens: string[],
+      proxies: string[],
+      proxyType: number,
+      code: string,
+    ): Promise<null>;
   };
 }

@@ -15,4 +15,7 @@ contextBridge.exposeInMainWorld('core', {
   checkTokens: (tokens, proxies, proxyType) => {
     return goLib.checkTokens(tokens, proxies, proxyType);
   },
+  joiner: (tokens, proxies, proxyType, code) => {
+    return goLib.joiner(tokens, proxies, proxyType, code);
+  },
 });
