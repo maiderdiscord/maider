@@ -3,7 +3,7 @@ module github.com/maiderdiscord/maider
 go 1.17
 
 require (
-	github.com/maiderdiscord/discord v0.0.0-20220108004838-ad6e4c56ca95
+	github.com/maiderdiscord/discord v0.0.0-20220108035014-c99348f67399
 	github.com/maiderdiscord/proxychecker v0.0.0-20220106023839-24f2063ffd1e
 )
 

@@ -7,6 +7,7 @@ module.exports = class GoLib {
       CheckProxy: ['string', ['string']],
       CheckTokens: ['string', ['string']],
       Joiner: ['void', ['string']],
+      Leaver: ['void', ['string']],
     });
   }
 
@@ -55,6 +56,25 @@ module.exports = class GoLib {
 
     return new Promise((resolve, reject) => {
       this.lib.Joiner.async(JSON.stringify(input), (err, _) => {
+        if (err != null) {
+          reject(err);
+          return;
+        }
+        resolve(null);
+      });
+    });
+  }
+
+  leaver(tokens, proxies, proxyType, guildID) {
+    const input = {
+      tokens,
+      proxies,
+      proxyType,
+      guildID,
+    };
+
+    return new Promise((resolve, reject) => {
+      this.lib.Leaver.async(JSON.stringify(input), (err, _) => {
         if (err != null) {
           reject(err);
           return;

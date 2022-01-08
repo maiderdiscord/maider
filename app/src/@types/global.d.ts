@@ -23,5 +23,11 @@ interface Window {
       proxyType: number,
       code: string,
     ): Promise<null>;
+    leaver(
+      tokens: string[],
+      proxies: string[],
+      proxyType: number,
+      guildID: string,
+    ): Promise<null>;
   };
 }

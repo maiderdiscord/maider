@@ -18,4 +18,7 @@ contextBridge.exposeInMainWorld('core', {
   joiner: (tokens, proxies, proxyType, code) => {
     return goLib.joiner(tokens, proxies, proxyType, code);
   },
+  leaver: (tokens, proxies, proxyType, guildID) => {
+    return goLib.leaver(tokens, proxies, proxyType, guildID);
+  },
 });
