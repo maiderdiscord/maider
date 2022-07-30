@@ -61,12 +61,8 @@ func checkTokens(data string) string {
 				return
 			}
 
-			if _, err := client.Me(ctx); err != nil {
-				m.Store(token, false)
-				return
-			}
-
-			m.Store(token, true)
+			_, err := client.Me(ctx)
+			m.Store(token, err != nil)
 		}(token, proxy)
 
 		if len(in.Proxies) > 0 {
